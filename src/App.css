@@ -36,3 +36,30 @@
     transform: rotate(360deg);
   }
 }
+
+/* My Styles */
+
+.text {
+  text-align: center;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
+}
+
+img{
+  height: 250px;
+  width: 350px;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.book {
+  margin: 20px;
+  height: 200px;
+  width: 150px;
+}
