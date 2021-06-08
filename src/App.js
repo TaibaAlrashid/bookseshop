@@ -7,12 +7,8 @@ function App() {
 
   return (
     <div>
-      <div>
-      <Home />
-      </div>
-      <div className="list">
-      <ProductList />
-      </div>
+      <div> <Home /> </div>
+      <div className="list"> <ProductList /> </div>
     </div>
   );
 }
