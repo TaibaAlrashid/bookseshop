@@ -1,15 +1,23 @@
 import './App.css';
 import Home from './components/Home'
 import ProductList from "./components/ProductList";
+import { ThemeProvider } from "styled-components";
+import { GlobalStyle } from "./styles"
+
+const theme = {
+  mainColor: "purple",
+  backgroundColor: "papayawhite",
+}
+
 
 function App() {
   
-
   return (
-    <div>
-      <div> <Home /> </div>
-      <div className="list"> <ProductList /> </div>
-    </div>
+    <ThemeProvider theme={theme}>
+    <GlobalStyle />
+      <Home /> 
+      <ProductList />
+    </ThemeProvider>
   );
 }
 
