@@ -52,6 +52,7 @@ export const SearchBarStyle = styled.input `
 
 export const DetailWrapper = styled.div `
     display: block;
+    margin-top: 50px;
     margin-left: auto;
     margin-right: auto;
     width: 50%;
@@ -64,6 +65,9 @@ export const DetailWrapper = styled.div `
 
     p {
         vertical-align: middle;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        margin: 20px auto;
+        margin-top: 30px;
     }
 `;
 

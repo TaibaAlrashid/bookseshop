@@ -3,10 +3,10 @@ import { DetailWrapper } from "../styles";
 const ProductDetail = (props) => {
     return (
         <DetailWrapper>  
-            <img src={props.products.image} alt={props.products.name} />
-            <p>{props.products.name}</p>
-            <p>{props.products.description}</p>
-            <p>{props.products.price} KD</p>
+            <img src={props.product.image} alt={props.product.name} />
+            <p>{props.product.name}</p>
+            <p>{props.product.Description}</p>
+            <p>{props.product.price} KD</p>
         </DetailWrapper>
     );
 };
