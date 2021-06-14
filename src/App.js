@@ -2,22 +2,41 @@ import './App.css';
 import Home from './components/Home'
 import ProductList from "./components/ProductList";
 import { ThemeProvider } from "styled-components";
-import { GlobalStyle } from "./styles"
+import { GlobalStyle, ThemeButton } from "./styles";
+import { useState } from "react";
 
 const theme = {
-  mainColor: "purple",
-  backgroundColor: "papayawhite",
-}
+  light: {
+    mainColor: "#2b2d42",
+    backgroundColor: "#f0efeb",
+  },
+  dark: {
+    mainColor: "#f0efeb",
+    backgroundColor: "#2b2d42",
+  },
+};
 
 
 function App() {
+  const [currentTheme, setCurrentTheme] = useState("light");
+
+  const toggleTheme = () => { 
+  if (currentTheme === "light") setCurrentTheme("dark");
+  else setCurrentTheme("light");
+  };
   
   return (
-    <ThemeProvider theme={theme}>
+    <div>
+    <ThemeProvider theme={theme[currentTheme]}>
     <GlobalStyle />
-      <Home /> 
+      <div>
+    <ThemeButton onClick={toggleTheme}>{currentTheme === "light"? "dark" : "light"} mode </ThemeButton>
+      <Home />
+      </div>
       <ProductList />
     </ThemeProvider>
+    </div>
+    
   );
 }
 

@@ -1,9 +1,14 @@
 import products from '../products'
 import { ListWrapper } from '../styles';
 import ProductItem from './ProductItem'
+import SearchBar from './SearchBar';
+import {useState} from "react";
 
 const ProductList = () => {
-    const productsList = products.map((product) => (
+    const [query, setQuery] = useState("");
+    const productsList = products
+    .filter((product) => product.name.toLowerCase().includes(query.toLowerCase()))    
+    .map((product) => (
         <ProductItem 
             name={product.name}
             price={product.price}
@@ -12,9 +17,10 @@ const ProductList = () => {
         />
 ));
 return (
-    <ListWrapper>
-        {productsList}
-    </ListWrapper>
+    <div>
+    <SearchBar setQuery={setQuery}/> 
+    <ListWrapper>{productsList}</ListWrapper>
+    </div>
 )
 };
 
