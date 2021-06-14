@@ -2,10 +2,10 @@ import { ProductWrapper } from "../styles";
 
 const ProductItem = (props) => {
     return (
-        <ProductWrapper>
-            <img alt={props.name} src={props.image}/>
-            <p >{props.name}</p>
-            <p >{props.price} KD</p>
+        <ProductWrapper onClick={() => props.setProduct(props.product)}>
+            <img src={props.product.image} alt={props.product.name} />
+            <p >{props.product.name} </p>
+            <p >{props.product.price} KD </p>
         </ProductWrapper>
     );
 };

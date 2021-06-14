@@ -9,38 +9,38 @@ export const GlobalStyle = createGlobalStyle `
 `;
 
 export const ThemeButton = styled.button `
-position: relative;
-background-color: ${(props) => props.theme.mainColor};
-color: ${(props) => props.theme.backgroundColor};
-  border: none;
-  font-size: 20px;
-  padding: 10px;
-  width: 150px;
-  text-align: center;
-  webkit-transition-duration: 0.4s;
-  transition-duration: 1.4s;
-  text-decoration: none;
-  overflow: hidden;
-  cursor: pointer;
+    position: relative;
+    background-color: ${(props) => props.theme.mainColor};
+    color: ${(props) => props.theme.backgroundColor};
+    border: none;
+    font-size: 20px;
+    padding: 10px;
+    width: 150px;
+    text-align: center;
+    webkit-transition-duration: 0.4s;
+    transition-duration: 1.4s;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
 }
 
 .button:after {
-  content: "";
-  display: block;
-  position: absolute;
-  padding-top: 200%;
-  padding-left: 250%;
-  margin-left: -20px;
-  margin-top: -120%;
-  opacity: 0;
-  transition: all 1.8s;
+    content: "";
+    display: block;
+    position: absolute;
+    padding-top: 200%;
+    padding-left: 250%;
+    margin-left: -20px;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 1.8s;
 }
 
 .button:active:after {
-  padding: 0;
-  margin: 0;
-  opacity: 1;
-  transition: 3s;
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 3s;
 `;
 
 export const SearchBarStyle = styled.input `
@@ -48,6 +48,23 @@ export const SearchBarStyle = styled.input `
     padding: 0.3rem;
     margin: 5rem auto;
     width: 35%;
+`;
+
+export const DetailWrapper = styled.div `
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+
+    img {
+        width: 25%;
+        float: left;
+        margin-right: auto;
+    }
+
+    p {
+        vertical-align: middle;
+    }
 `;
 
 export const Title = styled.h1`
