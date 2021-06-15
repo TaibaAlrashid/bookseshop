@@ -41,6 +41,20 @@ const products = [
         Description: "by George S. Clason, Print length: paperback 120 pages",
         image:"https://cdn2.penguin.com.au/covers/original/9780451205360.jpg",
     },
+    {
+        id: 7,
+        name: "1984",
+        price: 5,
+        Description: "by George Orwell, Print length: paperback 328 pages",
+        image:"https://i.ebayimg.com/images/g/pq8AAOSwOZRfGfTY/s-l640.jpg",
+    },
+    {
+        id: 8,
+        name: "Forty Rules of Love",
+        price: 6,
+        Description: "by Elif Shafak, Print length: paperback 368 pages",
+        image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR945Oki9Ee7BO1AzBeFnvV4YmhbqdxRwF_Ew&usqp=CAU",
+    },
 ];
 
 export default products;

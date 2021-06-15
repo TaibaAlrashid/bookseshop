@@ -43,11 +43,15 @@ export const ThemeButton = styled.button `
     transition: 3s;
 `;
 
+export const DeleteButtonStyled = styled.p `
+    color: ${props => props.theme.grey}; 
+`;
+
 export const SearchBarStyle = styled.input `
     display: block;
     padding: 0.3rem;
     margin: 5rem auto;
-    width: 35%;
+    width: 25%;
 `;
 
 export const DetailWrapper = styled.div `
@@ -92,8 +96,8 @@ export const ShopImage = styled.img `
 `;
 
 export const ListWrapper = styled.div`
-    display: flex;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(4, 200px);
     justify-content: center;
 `;
 
