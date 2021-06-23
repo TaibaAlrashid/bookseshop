@@ -4,8 +4,8 @@ import { Link, NavLink } from "react-router-dom";
 
 export const GlobalStyle = createGlobalStyle`
     body {
-        color: ${(props) => props.theme.mainColor};
-        background-color: ${(props) => props.theme.backgroundColor}; 
+      color: ${(props) => props.theme.mainColor};
+      background-color: ${(props) => props.theme.backgroundColor}; 
     }    
 `;
 
@@ -95,10 +95,13 @@ export const DetailWrapper = styled.div`
 
 export const Title = styled.h1`
   text-align: center;
+  font-size: 35px;
 `;
 
 export const Description = styled.h4`
   text-align: center;
+  font-size: 13px;
+  padding-bottom: 30px;
 `;
 
 export const ShopImage = styled.img`

@@ -5,21 +5,17 @@ import ProductItem from "./ProductItem";
 import SearchBar from "./SearchBar";
 /* useState */
 import { useState } from "react";
+/* Mobx */
+import bookStore from "../stores/bookStore";
+import { observer } from "mobx-react";
 
-const ProductList = (props) => {
+const ProductList = () => {
   const [query, setQuery] = useState("");
-  const productsList = props.products
+  const productsList = bookStore.products
     .filter((product) =>
       product.name.toLowerCase().includes(query.toLowerCase())
     )
-    .map((product) => (
-      <ProductItem
-        setProduct={props.setProduct}
-        deleteProduct={props.deleteProduct}
-        product={product}
-        id={product.id}
-      />
-    ));
+    .map((product) => <ProductItem product={product} id={product.id} />);
 
   return (
     <div>
@@ -29,4 +25,4 @@ const ProductList = (props) => {
   );
 };
 
-export default ProductList;
+export default observer(ProductList);
