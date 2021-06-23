@@ -25,6 +25,14 @@ export const NavLinkStyled = styled(NavLink)`
   }
 `;
 
+export const BackLink = styled(Link)`
+  .backlink {
+    margin-left: 90%;
+    width: 35px;
+    height: 35px;
+  }
+`;
+
 export const ThemeButton = styled.button`
     position: relative;
     background-color: ${(props) => props.theme.mainColor};
@@ -62,6 +70,7 @@ export const ThemeButton = styled.button`
 
 export const DeleteButtonStyled = styled.p`
   color: ${(props) => props.theme.grey};
+  cursor: pointer;
 `;
 
 export const SearchBarStyle = styled.input`
@@ -72,16 +81,17 @@ export const SearchBarStyle = styled.input`
 `;
 
 export const DetailWrapper = styled.div`
-  display: block;
   margin-top: 50px;
   margin-left: auto;
   margin-right: auto;
   width: 50%;
+  cursor: default;
 
   img {
     width: 25%;
     float: left;
-    margin-right: auto;
+    margin: auto;
+    padding: 5px;
   }
 
   p {
@@ -90,23 +100,33 @@ export const DetailWrapper = styled.div`
       "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
     margin: 20px auto;
     margin-top: 30px;
+    font-style: italic;
+    padding: 10px;
+  }
+
+  .bookname {
+    color: #1d3557;
+    font-weight: bold;
+    font-style: normal;
   }
 `;
 
 export const Title = styled.h1`
   text-align: center;
   font-size: 35px;
+  cursor: default;
 `;
 
 export const Description = styled.h4`
   text-align: center;
   font-size: 13px;
   padding-bottom: 30px;
+  cursor: default;
 `;
 
 export const ShopImage = styled.img`
-  height: 250px;
-  width: 350px;
+  height: 400px;
+  width: 600px;
   display: block;
   margin-right: auto;
   margin-left: auto;
@@ -124,13 +144,19 @@ export const ListWrapper = styled.div`
 `;
 
 export const ProductWrapper = styled.div`
+  cursor: default;
+
   img {
     margin: 20px;
     height: 200px;
     width: 150px;
     border: 1px solid #ddd;
     border-radius: 4px;
-    padding: 5px;
+    padding: 3px;
+    cursor: grab;
+  }
+  img:hover {
+    background-color: white;
   }
 
   p {
@@ -138,6 +164,5 @@ export const ProductWrapper = styled.div`
     font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
       "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
     font-size: 14px;
-    font-style: italic;
   }
 `;
