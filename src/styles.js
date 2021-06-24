@@ -2,6 +2,8 @@ import styled, { createGlobalStyle } from "styled-components";
 /* Libraries */
 import { Link, NavLink } from "react-router-dom";
 
+import { BiBookAdd } from "react-icons/bi";
+
 export const GlobalStyle = createGlobalStyle`
     body {
       color: ${(props) => props.theme.mainColor};
@@ -30,6 +32,22 @@ export const BackLink = styled(Link)`
     margin-left: 90%;
     width: 35px;
     height: 35px;
+  }
+`;
+
+export const BiBookAddStyled = styled(BiBookAdd)`
+  margin-left: 75%;
+  margin-bottom: 50px;
+`;
+
+export const ModalButton = styled.button`
+  color: ${(props) => props.theme.backgroundColor};
+  background-color: ${(props) => props.theme.mainColor};
+  width: 100px;
+  border-radius: 5px;
+  &:hover {
+    color: ${(props) => props.theme.mainColor};
+    background-color: ${(props) => props.theme.backgroundColor};
   }
 `;
 
@@ -90,15 +108,14 @@ export const DetailWrapper = styled.div`
   img {
     width: 25%;
     float: left;
-    margin: auto;
-    padding: 5px;
+    padding: 3px;
   }
 
   p {
     vertical-align: middle;
     font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
       "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-    margin: 20px auto;
+    margin: auto 20px;
     margin-top: 30px;
     font-style: italic;
     padding: 10px;

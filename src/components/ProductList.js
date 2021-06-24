@@ -3,6 +3,7 @@ import { ListWrapper } from "../styles";
 /* Components */
 import ProductItem from "./ProductItem";
 import SearchBar from "./SearchBar";
+import AddButton from "./buttons/AddButton";
 /* useState */
 import { useState } from "react";
 /* Mobx */
@@ -11,6 +12,7 @@ import { observer } from "mobx-react";
 
 const ProductList = () => {
   const [query, setQuery] = useState("");
+
   const productsList = bookStore.products
     .filter((product) =>
       product.name.toLowerCase().includes(query.toLowerCase())
@@ -20,6 +22,7 @@ const ProductList = () => {
   return (
     <div>
       <SearchBar setQuery={setQuery} />
+      <AddButton />
       <ListWrapper>{productsList}</ListWrapper>
     </div>
   );
