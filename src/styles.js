@@ -51,6 +51,12 @@ export const ModalButton = styled.button`
   }
 `;
 
+export const UpdateButtonStyled = styled.p`
+  color: ${(props) => props.theme.mainColor};
+  font-style: italic;
+  cursor: pointer;
+`;
+
 export const ThemeButton = styled.button`
     position: relative;
     background-color: ${(props) => props.theme.mainColor};

@@ -21,6 +21,18 @@ class BookStore {
     newProduct.slug = slugify(newProduct.name);
     this.products.push(newProduct);
   };
+
+  updateProduct = (updateProduct) => {
+    const product = this.products.find(
+      (product) => product.id === updateProduct
+    );
+    product.name = updateProduct.name;
+    product.price = updateProduct.price;
+    product.Description = updateProduct.Description;
+    product.image = updateProduct.image;
+
+    product.slug = slugify(updateProduct.name);
+  };
 }
 
 const bookStore = new BookStore();

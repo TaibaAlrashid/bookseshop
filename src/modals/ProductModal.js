@@ -4,12 +4,16 @@ import bookStore from "../stores/bookStore";
 import { ModalButton } from "../styles";
 
 const ProductModal = (props) => {
-  const [product, setProduct] = useState({
-    name: "",
-    price: 0,
-    Description: "",
-    image: "",
-  });
+  const [product, setProduct] = useState(
+    props.oldProduct
+      ? props.oldProduct
+      : {
+          name: "",
+          price: 0,
+          Description: "",
+          image: "",
+        }
+  );
 
   const handleChange = (event) => {
     setProduct({ ...product, [event.target.name]: event.target.value });
@@ -17,7 +21,8 @@ const ProductModal = (props) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    bookStore.createProduct(product);
+    if (props.oldProduct) bookStore.updateProduct(product);
+    else bookStore.createProduct(product);
     props.closeModal();
   };
 
@@ -69,7 +74,7 @@ const ProductModal = (props) => {
             />
           </div>
           <div className="col-12">
-            <ModalButton>Add</ModalButton>
+            <ModalButton>{props.oldProduct ? "Update" : "Add"}</ModalButton>
           </div>
         </form>
       </Modal>
