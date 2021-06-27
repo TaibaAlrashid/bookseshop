@@ -3,7 +3,7 @@ import ProductModal from "../../modals/ProductModal";
 import products from "../../products";
 import { UpdateButtonStyled } from "../../styles";
 
-const UpdateButton = () => {
+const UpdateButton = (props) => {
   const [isOpen, setIsOpen] = useState(false);
   const openModal = () => setIsOpen(true);
   const closeModal = () => setIsOpen(false);
@@ -14,7 +14,7 @@ const UpdateButton = () => {
       <ProductModal
         isOpen={isOpen}
         closeModal={closeModal}
-        oldProduct={products}
+        oldProduct={props.product}
       />
     </div>
   );

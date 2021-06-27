@@ -41,6 +41,7 @@ const ProductModal = (props) => {
               type="text"
               onChange={handleChange}
               name="name"
+              value={product.name}
             />
           </div>
           <div className="col-md-6">
@@ -51,6 +52,7 @@ const ProductModal = (props) => {
               min="0"
               onChange={handleChange}
               name="price"
+              value={product.price}
             />
           </div>
           <div className="col-12">
@@ -60,6 +62,7 @@ const ProductModal = (props) => {
               type="text"
               onChange={handleChange}
               name="Description"
+              value={product.Description}
             />
           </div>
           <div className="col-12">
@@ -71,6 +74,7 @@ const ProductModal = (props) => {
               type="text"
               onChange={handleChange}
               name="image"
+              value={product.image}
             />
           </div>
           <div className="col-12">
