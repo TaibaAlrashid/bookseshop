@@ -1,13 +1,22 @@
-import products from "../products";
 import { makeAutoObservable } from "mobx";
 import slugify from "react-slugify";
+import axios from "axios";
 
 class BookStore {
-  products = products;
+  products = [];
 
   constructor() {
     makeAutoObservable(this);
   }
+
+  fetchBooks = async () => {
+    try {
+      const response = await axios.get("http://localhost:8000/products");
+      this.books = response.data;
+    } catch (error) {
+      console.log("fetchBooks:", error);
+    }
+  };
 
   deleteProduct = (productId) => {
     const newProducts = this.products.filter(
@@ -36,4 +45,5 @@ class BookStore {
 }
 
 const bookStore = new BookStore();
+bookStore.fetchBooks();
 export default bookStore;
