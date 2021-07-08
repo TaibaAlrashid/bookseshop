@@ -6,7 +6,7 @@ import { DetailWrapper, BackLink } from "../styles";
 /* Components */
 import DeleteButton from "./buttons/DeleteButton";
 /* Libraries */
-import { useParams, Redirect, Link } from "react-router-dom";
+import { useParams, Redirect } from "react-router-dom";
 
 const ProductDetail = () => {
   const productSlug = useParams().productSlug;
@@ -27,6 +27,7 @@ const ProductDetail = () => {
         <img
           className="backlink"
           src="https://image.flaticon.com/icons/png/512/152/152417.png"
+          alt={"back"}
         />
       </BackLink>
     </DetailWrapper>

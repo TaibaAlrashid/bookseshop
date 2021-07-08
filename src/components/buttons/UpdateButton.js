@@ -1,6 +1,5 @@
 import { useState } from "react";
 import ProductModal from "../../modals/ProductModal";
-import products from "../../products";
 import { UpdateButtonStyled } from "../../styles";
 
 const UpdateButton = (props) => {
@@ -19,5 +18,4 @@ const UpdateButton = (props) => {
     </div>
   );
 };
-
 export default UpdateButton;

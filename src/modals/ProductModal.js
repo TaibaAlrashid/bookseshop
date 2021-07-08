@@ -26,6 +26,10 @@ const ProductModal = (props) => {
     props.closeModal();
   };
 
+  const handleImage = (event) => {
+    setProduct({ ...product, image: event.target.files[0] });
+  };
+
   return (
     <div>
       <Modal
@@ -71,10 +75,9 @@ const ProductModal = (props) => {
             </label>
             <input
               className="form-control"
-              type="text"
-              onChange={handleChange}
+              type="file"
+              onChange={handleImage}
               name="image"
-              value={product.image}
             />
           </div>
           <div className="col-12">
