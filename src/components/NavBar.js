@@ -16,6 +16,9 @@ const NavBar = (props) => {
             <NavLinkStyled to="/products" className="nav-item">
               Products
             </NavLinkStyled>
+            <NavLinkStyled to="/shops" className="nav-item">
+              shops
+            </NavLinkStyled>
             <ThemeButton onClick={props.toggleTheme}>
               {props.currentTheme === "light" ? "Dark" : "Light"} mode{" "}
             </ThemeButton>

@@ -7,13 +7,17 @@ import AddButton from "./buttons/AddButton";
 /* useState */
 import { useState } from "react";
 /* Mobx */
-import bookStore from "../stores/bookStore";
 import { observer } from "mobx-react";
+import ProductModal from "../modals/ProductModal";
 
-const ProductList = () => {
+const ProductList = ({ products, shop }) => {
   const [query, setQuery] = useState("");
+  const [isOpen, setIsOpen] = useState(false);
 
-  const productsList = bookStore.products
+  const openModal = () => setIsOpen(true);
+  const closeModal = () => setIsOpen(false);
+
+  const productsList = products
     .filter((product) =>
       product.name.toLowerCase().includes(query.toLowerCase())
     )
@@ -22,7 +26,8 @@ const ProductList = () => {
   return (
     <div>
       <SearchBar setQuery={setQuery} />
-      <AddButton />
+      <AddButton onClick={openModal} />
+      <ProductModal isOpen={isOpen} closeModal={closeModal} shop={shop} />
       <ListWrapper>{productsList}</ListWrapper>
     </div>
   );

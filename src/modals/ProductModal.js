@@ -22,7 +22,7 @@ const ProductModal = (props) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (props.oldProduct) bookStore.updateProduct(product);
-    else bookStore.createProduct(product);
+    else bookStore.createProduct(product, props.shop);
     props.closeModal();
   };
 

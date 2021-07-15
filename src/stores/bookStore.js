@@ -30,15 +30,16 @@ class BookStore {
     }
   };
 
-  createProduct = async (newProduct) => {
+  createProduct = async (newProduct, shop) => {
     try {
       const formData = new FormData();
       for (const key in newProduct) formData.append(key, newProduct[key]);
       const response = await axios.post(
-        "http://localhost:8000/products",
+        `http://localhost:8000/shops/${shop.id}/products`,
         formData
       );
       this.products.push(response.data);
+      shop.products.push({ id: response.data.id });
     } catch (error) {
       console.log(error);
     }
@@ -61,6 +62,9 @@ class BookStore {
       console.log(error);
     }
   };
+
+  getProductById = (productId) =>
+    this.products.find((product) => product.id === productId);
 }
 
 const bookStore = new BookStore();
