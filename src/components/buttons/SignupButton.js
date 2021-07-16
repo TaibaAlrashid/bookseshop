@@ -1,5 +1,6 @@
 import { useState } from "react";
-import SignupModal from "../modals/SignupModal";
+import { AuthButtonStyled } from "../../styles";
+import SignupModal from "../../modals/SignupModal";
 
 const SignupButton = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -8,7 +9,7 @@ const SignupButton = () => {
 
   return (
     <>
-      <p onClick={openModal}>Signup</p>
+      <AuthButtonStyled onClick={openModal}>Signup</AuthButtonStyled>
       <SignupModal isOpen={isOpen} closeModal={closeModal} />
     </>
   );

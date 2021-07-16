@@ -1,5 +1,5 @@
 import { makeAutoObservable } from "mobx";
-import axios from "axios";
+import instance from "./instance";
 
 class BookStore {
   products = [];
@@ -10,7 +10,7 @@ class BookStore {
 
   fetchBooks = async () => {
     try {
-      const response = await axios.get("http://localhost:8000/products");
+      const response = await instance.get("/products");
       this.products = response.data;
       console.log(this.products);
     } catch (error) {
@@ -20,7 +20,7 @@ class BookStore {
 
   deleteProduct = async (productId) => {
     try {
-      await axios.delete(`http://localhost:8000/products/${productId}`);
+      await instance.delete(`/products/${productId}`);
       const newProducts = this.products.filter(
         (product) => product.id !== productId
       );
@@ -34,8 +34,8 @@ class BookStore {
     try {
       const formData = new FormData();
       for (const key in newProduct) formData.append(key, newProduct[key]);
-      const response = await axios.post(
-        `http://localhost:8000/shops/${shop.id}/products`,
+      const response = await instance.post(
+        `/shops/${shop.id}/products`,
         formData
       );
       this.products.push(response.data);
@@ -49,8 +49,8 @@ class BookStore {
     try {
       const formData = new FormData();
       for (const key in updateProduct) formData.append(key, updateProduct[key]);
-      const response = await axios.put(
-        `http://localhost:8000/products/${updateProduct.id}`,
+      const response = await instance.put(
+        `/products/${updateProduct.id}`,
         formData
       );
       const product = this.products.find(

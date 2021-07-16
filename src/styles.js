@@ -57,14 +57,24 @@ export const UpdateButtonStyled = styled.p`
   cursor: pointer;
 `;
 
+export const AuthButtonStyled = styled.button`
+  font-size: 0.9em;
+  padding: 0.25em 1em;
+  margin-left: 0.5em;
+  border-radius: 5px;
+  background-color: ${(props) => props.theme.backgroundColor};
+  color: ${(props) => props.theme.mainColor};
+`;
+
 export const ThemeButton = styled.button`
     position: relative;
     background-color: ${(props) => props.theme.mainColor};
     color: ${(props) => props.theme.backgroundColor};
     border: none;
-    font-size: 18px;
+    border-radius: 5px;
+    font-size: 16px;
     padding: 0.4px;
-    width: 125px;
+    width: 90px;
     text-align: center;
     webkit-transition-duration: 0.4s;
     transition-duration: 1.4s;

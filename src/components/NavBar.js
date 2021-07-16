@@ -1,5 +1,6 @@
 /* Styles */
 import { ThemeButton, NavLinkStyled, Logo } from "../styles";
+import SignupButton from "./buttons/SignupButton";
 
 const NavBar = (props) => {
   return (
@@ -12,6 +13,10 @@ const NavBar = (props) => {
               alt={"logo"}
             />
           </Logo>
+          <ThemeButton onClick={props.toggleTheme}>
+            {props.currentTheme === "light" ? "Dark" : "Light"} mode{" "}
+          </ThemeButton>
+          <SignupButton />
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <NavLinkStyled to="/products" className="nav-item">
               Products
@@ -19,9 +24,6 @@ const NavBar = (props) => {
             <NavLinkStyled to="/shops" className="nav-item">
               shops
             </NavLinkStyled>
-            <ThemeButton onClick={props.toggleTheme}>
-              {props.currentTheme === "light" ? "Dark" : "Light"} mode{" "}
-            </ThemeButton>
           </ul>
         </div>
       </div>
