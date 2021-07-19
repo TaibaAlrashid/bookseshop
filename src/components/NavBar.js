@@ -1,6 +1,9 @@
 /* Styles */
 import { ThemeButton, NavLinkStyled, Logo } from "../styles";
+import SigninButton from "./buttons/SigninButton";
 import SignupButton from "./buttons/SignupButton";
+import authStore from "../stores/authStore";
+import { observer } from "mobx-react";
 
 const NavBar = (props) => {
   return (
@@ -16,7 +19,14 @@ const NavBar = (props) => {
           <ThemeButton onClick={props.toggleTheme}>
             {props.currentTheme === "light" ? "Dark" : "Light"} mode{" "}
           </ThemeButton>
-          <SignupButton />
+          {authStore.user ? (
+            <p>HII {authStore.user.username}</p>
+          ) : (
+            <>
+              <SigninButton />
+              <SignupButton />
+            </>
+          )}
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <NavLinkStyled to="/products" className="nav-item">
               Products
@@ -31,4 +41,4 @@ const NavBar = (props) => {
   );
 };
 
-export default NavBar;
+export default observer(NavBar);
