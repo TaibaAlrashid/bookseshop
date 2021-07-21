@@ -1,8 +1,10 @@
 import { makeAutoObservable } from "mobx";
 import instance from "./instance";
+import shopStore from "./shopStore";
 
 class BookStore {
   products = [];
+  loading = true;
 
   constructor() {
     makeAutoObservable(this);
@@ -12,7 +14,7 @@ class BookStore {
     try {
       const response = await instance.get("/products");
       this.products = response.data;
-      console.log(this.products);
+      this.loading = false;
     } catch (error) {
       console.log("fetchBooks:", error);
     }
@@ -20,6 +22,7 @@ class BookStore {
 
   deleteProduct = async (productId) => {
     try {
+      shopStore.loading = true;
       await instance.delete(`/products/${productId}`);
       const newProducts = this.products.filter(
         (product) => product.id !== productId

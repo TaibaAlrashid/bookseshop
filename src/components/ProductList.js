@@ -9,6 +9,8 @@ import { useState } from "react";
 /* Mobx */
 import { observer } from "mobx-react";
 import ProductModal from "../modals/ProductModal";
+/* Stores */
+import authStore from "../stores/authStore";
 
 const ProductList = ({ products, shop }) => {
   const [query, setQuery] = useState("");
@@ -26,7 +28,7 @@ const ProductList = ({ products, shop }) => {
   return (
     <div>
       <SearchBar setQuery={setQuery} />
-      <AddButton onClick={openModal} />
+      {authStore.user && <AddButton onClick={openModal} />}
       <ProductModal isOpen={isOpen} closeModal={closeModal} shop={shop} />
       <ListWrapper>{productsList}</ListWrapper>
     </div>

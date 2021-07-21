@@ -1,6 +1,9 @@
-import { useState } from "react";
 import Modal from "react-modal";
+/* usestate */
+import { useState } from "react";
+/* stores */
 import bookStore from "../stores/bookStore";
+/* styles */
 import { ModalButton } from "../styles";
 
 const ProductModal = (props) => {

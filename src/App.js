@@ -10,6 +10,9 @@ import { GlobalStyle } from "./styles";
 import { useState } from "react";
 /* Libraries */
 import { observer } from "mobx-react";
+/* Stores */
+import shopStore from "./stores/shopStore";
+import bookStore from "./stores/bookStore";
 
 const theme = {
   light: {
@@ -37,7 +40,11 @@ function App() {
       <ThemeProvider theme={theme[currentTheme]}>
         <GlobalStyle />
         <NavBar currentTheme={currentTheme} toggleTheme={toggleTheme} />
-        <Routes />
+        {shopStore.loading || bookStore.loading ? (
+          <h1>Loading....</h1>
+        ) : (
+          <Routes />
+        )}
       </ThemeProvider>
     </div>
   );

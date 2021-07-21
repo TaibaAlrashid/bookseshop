@@ -6,6 +6,8 @@ import UpdateButton from "./buttons/UpdateButton";
 /* Libraries */
 import { Link } from "react-router-dom";
 import { observer } from "mobx-react";
+/* Stores */
+import authStore from "../stores/authStore";
 
 const ProductItem = (props) => {
   return (
@@ -15,8 +17,13 @@ const ProductItem = (props) => {
       </Link>
       <p>{props.product.name} </p>
       <p>{props.product.price} KD </p>
-      <UpdateButton product={props.product} />
-      <DeleteButton productId={props.product.id} />
+
+      {authStore.user && (
+        <>
+          <UpdateButton product={props.product} />
+          <DeleteButton productId={props.product.id} />
+        </>
+      )}
     </ProductWrapper>
   );
 };

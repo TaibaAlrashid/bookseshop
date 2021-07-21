@@ -3,6 +3,7 @@ import styled, { createGlobalStyle } from "styled-components";
 import { Link, NavLink } from "react-router-dom";
 
 import { BiBookAdd } from "react-icons/bi";
+import { VscSignOut } from "react-icons/vsc";
 
 export const GlobalStyle = createGlobalStyle`
     body {
@@ -198,4 +199,8 @@ export const ProductWrapper = styled.div`
       "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
     font-size: 14px;
   }
+`;
+export const SignOutStyled = styled(VscSignOut)`
+  size: "2em";
+  margin: 5px;
 `;

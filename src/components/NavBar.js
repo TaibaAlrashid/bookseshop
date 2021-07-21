@@ -1,5 +1,5 @@
 /* Styles */
-import { ThemeButton, NavLinkStyled, Logo } from "../styles";
+import { ThemeButton, NavLinkStyled, Logo, SignOutStyled } from "../styles";
 import SigninButton from "./buttons/SigninButton";
 import SignupButton from "./buttons/SignupButton";
 import authStore from "../stores/authStore";
@@ -20,7 +20,10 @@ const NavBar = (props) => {
             {props.currentTheme === "light" ? "Dark" : "Light"} mode{" "}
           </ThemeButton>
           {authStore.user ? (
-            <p>HII {authStore.user.username}</p>
+            <>
+              <p>Hello {authStore.user.username}</p>
+              <SignOutStyled onClick={authStore.signout}></SignOutStyled>
+            </>
           ) : (
             <>
               <SigninButton />
