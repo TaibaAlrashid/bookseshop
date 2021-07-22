@@ -6,6 +6,7 @@ import SearchBar from "./SearchBar";
 import AddButton from "./buttons/AddButton";
 import ShopModal from "../modals/ShopModal";
 import authStore from "../stores/authStore";
+import { ListTitle } from "../styles";
 
 const ShopList = () => {
   const [query, setQuery] = useState("");
@@ -19,8 +20,8 @@ const ShopList = () => {
     .map((shop) => <ShopItem shop={shop} />);
   return (
     <div className="container">
-      <h4>Shops</h4>
       <SearchBar setQuery={setQuery} />
+      <ListTitle>Shops</ListTitle>
       {authStore.user && <AddButton onClick={openModal} />}
       <ShopModal isOpen={isOpen} closeModal={closeModal} />
       {shops}

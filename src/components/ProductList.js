@@ -1,5 +1,5 @@
 /* Styles */
-import { ListWrapper } from "../styles";
+import { ListWrapper, ListTitle } from "../styles";
 /* Components */
 import ProductItem from "./ProductItem";
 import SearchBar from "./SearchBar";
@@ -26,8 +26,9 @@ const ProductList = ({ products, shop }) => {
     .map((product) => <ProductItem product={product} id={product.id} />);
 
   return (
-    <div>
+    <div className="container">
       <SearchBar setQuery={setQuery} />
+      <ListTitle>Books</ListTitle>
       {authStore.user && <AddButton onClick={openModal} />}
       <ProductModal isOpen={isOpen} closeModal={closeModal} shop={shop} />
       <ListWrapper>{productsList}</ListWrapper>

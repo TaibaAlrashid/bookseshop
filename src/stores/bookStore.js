@@ -4,7 +4,7 @@ import shopStore from "./shopStore";
 
 class BookStore {
   products = [];
-  loading = true;
+  loading = false;
 
   constructor() {
     makeAutoObservable(this);

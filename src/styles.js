@@ -1,7 +1,7 @@
 import styled, { createGlobalStyle } from "styled-components";
 /* Libraries */
 import { Link, NavLink } from "react-router-dom";
-
+/* Icons */
 import { BiBookAdd } from "react-icons/bi";
 import { VscSignOut } from "react-icons/vsc";
 
@@ -46,6 +46,8 @@ export const ModalButton = styled.button`
   background-color: ${(props) => props.theme.mainColor};
   width: 100px;
   border-radius: 5px;
+  margin-top: 2.5%;
+  margin-left: 25%;
   &:hover {
     color: ${(props) => props.theme.mainColor};
     background-color: ${(props) => props.theme.backgroundColor};
@@ -156,6 +158,12 @@ export const Description = styled.h4`
   font-size: 13px;
   padding-bottom: 30px;
   cursor: default;
+`;
+
+export const ListTitle = styled.h4`
+  font-size: 30px;
+  font-style: italic;
+  color: #1d3557;
 `;
 
 export const ShopImage = styled.img`
